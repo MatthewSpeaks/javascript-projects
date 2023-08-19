@@ -9,4 +9,13 @@
    multi-line
    comments. */
 
+   /* testing
+   multiple
+   line
+   comments
+   */
+
+   // testing single line comments
+   
+
    console.log("Comments make your code more readable by others.");
