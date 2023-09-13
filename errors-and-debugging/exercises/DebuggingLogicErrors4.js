@@ -2,7 +2,9 @@
 // Run the code and examine the output. 
 
 // Given the values for fuelLevel, crewStatus and computerStatus, should launchReady be true or false?
+// The value should be false. It should be an && logic, not an ||. 
 // Is the program behaving as expected?
+// no, the program is not behaving as expected as we would expect fals given the fuelLevel is too low. 
 
 let launchReady = false;
 let fuelLevel = 17000;
