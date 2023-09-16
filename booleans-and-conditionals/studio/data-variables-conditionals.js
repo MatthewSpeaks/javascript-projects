@@ -72,10 +72,8 @@ if (weatherStatus === "clear") {
 preparedForLiftOff = countCheck && statusCheck && massCheck && fuelTempCheck && fuelLevelCheck && weatherCheck;
 
 if (preparedForLiftOff) {
- console.log("All systems are a go! Initializing the shuttle launch sequence.\n", "date = %s \n", date, "time = %s \n", time, "astronautCount = ${astronautCount}\n", astronautCount, "crewMassKg = %i\n", crewMassKg, "fuelMassKg = %i\n", fuelMassKg, "shuttleMassKg =%i\n", shuttleMassKg, "totalMassKg = %i\n", totalMassKg, "fuelTempCelcius = %i\n", fuelTempCelsius, "weatherStatus = %s\n", weatherStatus, "Have a safe flight!");
+ console.log(`All systems are a go! Initializing the shuttle launch sequence.\n` + `date = ${date}\n` + `time = ${time}\n` + `astronautCount = ${astronautCount}\n` + `crewMassKg = ${crewMassKg}\n` + `fuelMassKg = ${fuelMassKg}` + `shuttleMassKg = ${shuttleMassKg}\n` + `totalMassKg = ${totalMassKg}\n` + `fuelTempCelcius = ${fuelTempCelsius}\n` + `weatherStatus = ${weatherStatus}\n` + `Have a safe flight!`);
 } else {
  console.log("Conditions for launch not met. Launch scrubbed!");
 }
 
-let myName = "Matthew";
-console.log("%s", myName);
