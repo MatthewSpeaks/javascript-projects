@@ -1,6 +1,8 @@
 //Define three variables for the LaunchCode shuttle - one for the starting fuel level, another for the number of astronauts aboard, and the third for the altitude the shuttle reaches.
 
-
+let fuelLevel = 0;
+let astronautCount = 0;
+let altitude = 0;
 
 
 
@@ -23,3 +25,39 @@
 /*Exercise #5: Output the result with the phrase, “The shuttle gained an altitude of ___ km.”
 
 If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”*/
+
+// Exercise #4 a.
+const input = require('readline-sync');
+
+while ((30000 < fuelLevel) || (fuelLevel <= 5000)) {
+  fuelLevel = input.question("Please enter fuel level, between 5,000(minimum tank level) and 30,000(full tank) units: "); 
+  fuelLevel = Number(fuelLevel) || 0;
+} 
+
+// Exercise #4 b.
+while ((astronautCount > 7) || (astronautCount <= 0)) {
+  astronautCount = input.question("How many astronauts for the mission? "); 
+  astronautCount = Number(astronautCount) || 0;
+} 
+
+console.log("Launching Shuttle!");
+
+// Exercise #4 c.
+while (fuelLevel >= 100) {
+  fuelLevel = fuelLevel - (100 * astronautCount);
+  altitude = altitude + 50;
+  console.log(`Altitude is: ${altitude}`);
+  if (altitude >= 2000) {
+    console.log("Orbit achieved!");
+    break;
+  } 
+} 
+
+if (altitude < 2000) {
+  console.log("Failed to reach orbit.");
+
+}
+
+
+
+  
