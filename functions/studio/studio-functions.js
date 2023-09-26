@@ -9,6 +9,15 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+function reverseCharacters(str) {
+   if (typeof(str) === typeof("str")) {
+    return str.split('').reverse().join('');
+   } else if (typeof(str) === typeof(1)) {
+    return Number(String(str).split('').reverse().join(''));
+   }
+    
+}
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -20,7 +29,7 @@
 // Part Three: Complete Reversal
 
 // 1. Define and initialize an empty array.
-// 2. Loop through the old array.
+// 2. Loop through the old array. 
 // 3. For each element in the old array, call reverseCharacters to flip the characters or digits.
 // 4. Add the reversed string (or number) to the array defined in part ‘a’.
 // 5. Return the final, reversed array.
@@ -30,12 +39,33 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+function reverseItemArray(array) {
+    let reversedArray = [];
+    for (let i = 0; i < array.length; i++) {
+        reversedArray.push(reverseCharacters(array[i]));
+    }
+    return reversedArray;
+}
+
+console.log(reverseItemArray(arrayTest1));
+
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
+
+function funPhrase(str) {
+    let phrase = '';
+    if (str.length <= 3) {
+        return phrase += (str.slice(str.length -1));
+    } else {
+        return phrase += (str.slice(0, 3));
+    }
+}
+
+console.log(funPhrase("Hel"));
 
 // Test Function
 
