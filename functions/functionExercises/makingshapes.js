@@ -29,7 +29,7 @@ function makeRectangle(width, length, char = '#') {
 }
 
 
-function makeDownwardStairs(height, char) {
+function makeDownwardStairs(height = 5, char = '#') {
     let stairs = '';
     for (let i = 0; i < (height); i++) {
         stairs += makeLine(i + 1, char);
@@ -43,7 +43,7 @@ function makeDownwardStairs(height, char) {
 
 
 
-function makeSpaceLine(numSpaces, numChars, char) {
+function makeSpaceLine(numSpaces = 5, numChars = 3, char = '#') {
     let spaceLine = '';
         spaceLine += makeLine(numSpaces, ' ');
         spaceLine += makeLine(numChars, char);
@@ -53,7 +53,7 @@ function makeSpaceLine(numSpaces, numChars, char) {
 
 
 
-function makeIsoscelesTriangle(height, char) {
+function makeIsoscelesTriangle(height = 8, char = '#') {
     let triangle = '';
     for (let i = 0; i < height; i++) {
             triangle += makeSpaceLine(height - i -1, 2*i + 1, char)
@@ -74,7 +74,7 @@ function reverseString(str) {
     return reverseStr;
 }
 
-function makeDiamond(size, char) {
+function makeDiamond(size = 5, char = '#') {
     let halfDiamond = '';
     halfDiamond += makeIsoscelesTriangle(size, char);
     let diamond = halfDiamond + '\n' + reverseString(halfDiamond);
@@ -82,7 +82,7 @@ function makeDiamond(size, char) {
 }
 
 
-console.log(makeDiamond(5, '#'));
+console.log(makeDiamond(50, '#'));
 
 
 
