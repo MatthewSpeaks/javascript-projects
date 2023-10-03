@@ -1,10 +1,51 @@
 // Code your selectRandomEntry function here:
+let idNumbers = [291, 414, 503, 599, 796, 890];
+
+
+function selectRandomEntry(theIdNumbers) {
+  return Math.floor(Math.random() * theIdNumbers.length);
+};
+
+let crewArray = [];
+
+  while (crewArray.length < 3) {
+    const selectedId = idNumbers[selectRandomEntry(idNumbers)];
+    if (!crewArray.includes(selectedId)) {
+      crewArray.push(selectedId);
+    }
+  }
+
+console.log(crewArray);
 
 
 // Code your buildCrewArray function here:
+// function buildCrewArray (crewArray, animals) {
+//   let slectedCrew = [];
+//   // loop through the array of animals and check to see if the astronaut ID matches the a value in the crewArray
+//   for (i = 0; i < animals.length; i++) {
+//     if (animals[i].astronautID === crewArray[0]) {
+//       slectedCrew.push(animals[i]);
+//     } else if (animals[i].astronautID === crewArray[1]) {
+//       slectedCrew.push(animals[i]);
+//     } else if (animals[i].astronautID === crewArray[2]) {
+//       slectedCrew.push(animals[i]);
+//     }
+//   }
+//   return slectedCrew;
+// };
 
+function buildCrewArray (crewArray, animals) {
+  let selectedCrew = [];
+  for (i= 0; i < animals.length; i++) {
+    for (j = 0; j < crewArray.length; j++) {
+      if (animals[i].astronautID === crewArray[j]) {
+        selectedCrew.push(animals[i]);
+      }
+    }
+  }
+  return selectedCrew;
+}
 
-let idNumbers = [291, 414, 503, 599, 796, 890];
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -51,5 +92,7 @@ let candidateF = {
 };
 
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
+
+console.log(buildCrewArray(crewArray, animals));
 
 // Code your template literal and console.log statements:
