@@ -19,20 +19,6 @@ console.log(crewArray);
 
 
 // Code your buildCrewArray function here:
-// function buildCrewArray (crewArray, animals) {
-//   let slectedCrew = [];
-//   // loop through the array of animals and check to see if the astronaut ID matches the a value in the crewArray
-//   for (i = 0; i < animals.length; i++) {
-//     if (animals[i].astronautID === crewArray[0]) {
-//       slectedCrew.push(animals[i]);
-//     } else if (animals[i].astronautID === crewArray[1]) {
-//       slectedCrew.push(animals[i]);
-//     } else if (animals[i].astronautID === crewArray[2]) {
-//       slectedCrew.push(animals[i]);
-//     }
-//   }
-//   return slectedCrew;
-// };
 
 function buildCrewArray (crewArray, animals) {
   let selectedCrew = [];
