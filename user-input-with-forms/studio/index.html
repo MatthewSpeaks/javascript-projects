@@ -1,11 +1,39 @@
 <!doctype html>
 
+<!--     Create a text input within the form and set its name attribute to the value "q".
+    Create a radio group with one radio button for each search engine. Recall that radio buttons with the same name are grouped, so use the same value for this attribute, "engine", on each radio button.
+    Create a label element for each radio button.
+    Finally, add a submit button to the form and set it’s value to "Go!". -->
+
+
 <head>
 	<meta charset="utf-8">
 	<script>
+		function setSearchEngine () {
+			const objectOfSites = {
+    		"google": "https://www.google.com/",
+			"duckduckgo": "https://duckduckgo.com/",
+			"bing": "https://www.bing.com/",
+			"ask": "https://www.ask.com/"
+		};
+			let selectedEngine = document.querySelector("[name=engine]:checked");
+			console.log("your function is running");
+			let engineValue = selectedEngine.value;
+			console.log(engineValue);
+			let formAction = document.getElementById("searchForm");
+			console.log(objectOfSites[engineValue]);
+			return formAction.setAttribute(action, objectOfSites[engineValue]);
+		}
+
+		
 		// TODO: create a handler
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let buttonSubmit = document.getElementById("submit");
+	
+		buttonSubmit.addEventListener("click", ()=> {
+			setSearchEngine();
+		})
     });
 	</script>
 </head>
@@ -14,6 +42,22 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<input type="text" name = "q"/>
+
+	<input type="radio" id="google" name="engine" value="google"/>
+	<label for="'google">Google</label>
+
+	<input type="radio" id="duckduckgo" name="engine" value="duckduckgo"/>
+	<label for="'duckduckgo">DuckDuckGo</label>
+
+	<input type="radio" id="bing" name="engine" value="bing"/>
+	<label for="'bing">Bing</label>
+
+	<input type="radio" id="ask" name="engine" value="ask"/>
+	<label for="'ask">Ask</label>
+
+	<button id="submit">Go!</button>
+
 	</form>
 
 </body>
